@@ -1,0 +1,25 @@
+#Dictonary Comprehensions
+# Kalkman, P. (2020, July 10). List, dictionary, and set comprehensions in Python. Dev Genius. 
+#https://blog.devgenius.io/list-dictionary-and-set-comprehensions-in-python-103c2a20191b. 
+
+
+git remote add origin https://github.com/Pedro-Aracena/IS-362.git
+git push -u origin main
+
+class Person:
+    
+    def __init__(self, id, name, age):
+        self.id = id
+        self.name = name
+        self.age = age
+
+
+persons = { 1: Person(1, "Fred", 26), 2: Person(2, "Ria", 31), 3: Person(3, "Sayid", 23) }
+
+above_25 = {}
+for key in persons:
+    if persons[key].age > 25:
+        above_25[key] = persons[key]
+
+
+above_25_dc = {id: person for (id, person) in persons.items() if person.age > 25}
